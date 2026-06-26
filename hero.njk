@@ -1,0 +1,50 @@
+<section id="{{ componentId }}" class="component haze-hero" data-component-id="{{ componentId }}">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="relative flex justify-center items-center py-24 {{ containerHeightClass }}">
+    <div class="container relative flex gap-12 items-center px-4 {{ hcClass }}">
+
+      <div class="flex flex-col gap-5 {{ textClass }}">
+
+        <span class="hero-badge">
+          ⚡ HAZE RESELLING
+        </span>
+
+        {% if properties.title %}
+          <h1 class="hero-title">
+            {{ properties.title | renderString }}
+          </h1>
+        {% endif %}
+
+        {% if properties.subtitle %}
+          <p class="hero-subtitle">
+            {{ properties.subtitle | renderString }}
+          </p>
+        {% endif %}
+
+        {% if properties.show_searchbar %}
+          {% render_snippet "searchbar.njk", alignment=properties.alignment %}
+        {% endif %}
+
+        {% if properties.buttons and properties.buttons.length > 0 %}
+          <div class="flex flex-wrap items-center gap-4 mt-4 {{ buttonClass }}">
+            {% render_snippet "buttons.njk", buttons=properties.buttons %}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {% if properties.side_image %}
+      <div class="flex items-center min-w-md {{ imageClass }}">
+        <img
+          src="{{ properties.side_image | imageUrl }}"
+          class="hero-image"
+          alt=""
+        />
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>

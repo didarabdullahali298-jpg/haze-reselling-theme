@@ -1,0 +1,49 @@
+<section id="{{ componentId }}" class="component" data-component-id="{{ componentId }}">
+  <div class="py-6 lg:py-8">
+    {% if properties.title %}
+      <div class="flex items-center justify-center mb-4 md:mb-6 lg:mb-8">
+        <div class="inline-block">
+          <h1 class="text-t-primary text-2xl text-center font-bold md:text-3xl lg:text-4xl">
+            {{ properties.title | renderString }}
+          </h1>
+          <hr class="w-full border-accent-500 mt-1 md:border-2 md:mt-1.5 lg:mt-2 mx-auto">
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+      <div class="text-center border-b-2 border-white/5 py-4 lg:py-6">
+        <p class="mb-1 text-3xl text-accent-500 font-bold uppercase md:mb-1.5 md:text-4xl lg:text-5xl lg:mb-2">
+          {{ helpers.numbers.formatCompact(shop.products_sold) }}
+        </p>
+        <p class="text-sm font-normal uppercase text-t-primary/80 md:text-base">
+          Products Sold
+        </p>
+      </div>
+      <div class="text-center border-b-2 border-white/5 py-4 lg:py-6">
+        <p class="mb-1 text-3xl text-accent-500 font-bold uppercase md:mb-1.5 md:text-4xl lg:text-5xl lg:mb-2">
+          {{ helpers.numbers.formatCompact(shop.total_customers) }}
+        </p>
+        <p class="text-sm font-normal uppercase text-t-primary/80 md:text-base">
+          Total Customers
+        </p>
+      </div>
+      <div class="text-center border-b-2 border-white/5 py-4 lg:py-6">
+        <p class="mb-1 text-3xl text-accent-500 font-bold uppercase md:mb-1.5 md:text-4xl lg:text-5xl lg:mb-2">
+          {{ helpers.numbers.formatCompact(shop.total_feedbacks) }}
+        </p>
+        <p class="text-sm font-normal uppercase text-t-primary/80 md:text-base">
+          Reviews Received
+        </p>
+      </div>
+      <div class="text-center border-b-2 border-white/5 py-4 lg:py-6">
+        <p class="mb-1 text-3xl text-accent-500 font-bold uppercase md:mb-1.5 md:text-4xl lg:text-5xl lg:mb-2">
+          {{ helpers.numbers.formatDecimal(shop.average_rating) }}
+        </p>
+        <p class="text-sm font-normal uppercase text-t-primary/80 md:text-base">
+          Average Rating
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

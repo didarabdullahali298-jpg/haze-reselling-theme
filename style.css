@@ -1,0 +1,414 @@
+/* =====================================================
+   HAZE RESELLING THEME
+   PART 1 - BASE + BACKGROUND + NAVBAR
+===================================================== */
+
+:root{
+    --haze:#1da1ff;
+    --haze-light:#57c2ff;
+    --haze-dark:#08101f;
+    --card:#10192d;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top,#123a73 0%,#08101f 45%,#040811 100%);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Animated Glow */
+
+body::before{
+content:"";
+position:fixed;
+left:-20%;
+top:-20%;
+width:140%;
+height:140%;
+background:
+radial-gradient(circle,#1da1ff22 0%,transparent 55%);
+filter:blur(160px);
+animation:hazeMove 10s infinite alternate ease-in-out;
+pointer-events:none;
+z-index:-2;
+}
+
+@keyframes hazeMove{
+
+0%{
+transform:translate(-5%,-5%);
+}
+
+100%{
+transform:translate(10%,8%);
+}
+
+}
+
+/* Navbar */
+
+nav{
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+background:rgba(8,15,30,.70)!important;
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(29,161,255,.15)!important;
+
+transition:.35s;
+
+}
+
+/* Logo */
+
+nav img{
+
+height:46px;
+
+transition:.35s;
+
+filter:drop-shadow(0 0 12px rgba(29,161,255,.4));
+
+}
+
+nav img:hover{
+
+transform:scale(1.08);
+
+filter:drop-shadow(0 0 25px #1da1ff);
+
+}
+
+/* Links */
+
+nav a{
+
+font-weight:600;
+
+letter-spacing:.3px;
+
+transition:.25s;
+
+}
+
+nav a:hover{
+
+color:var(--haze)!important;
+
+text-shadow:
+
+0 0 12px var(--haze);
+
+}
+
+/* Cards */
+
+.bg-card{
+
+background:rgba(16,25,45,.72)!important;
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(29,161,255,.12)!important;
+
+border-radius:18px!important;
+
+transition:.35s;
+
+}
+
+.bg-card:hover{
+
+transform:translateY(-6px);
+
+border-color:var(--haze)!important;
+
+box-shadow:
+
+0 0 30px rgba(29,161,255,.25);
+
+}
+
+/* Buttons */
+
+button,
+.btn,
+a[class*="bg-accent"]{
+
+background:
+linear-gradient(135deg,#1da1ff,#006bff)!important;
+
+border:none!important;
+
+border-radius:14px!important;
+
+font-weight:700;
+
+transition:.3s;
+
+box-shadow:
+
+0 0 20px rgba(29,161,255,.35);
+
+}
+
+button:hover,
+.btn:hover,
+a[class*="bg-accent"]:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 18px #1da1ff,
+
+0 0 45px rgba(29,161,255,.45);
+
+}
+
+/* Prices */
+
+.text-accent-500{
+
+color:var(--haze)!important;
+
+}
+
+/* Inputs */
+
+input,
+textarea,
+select{
+
+background:rgba(255,255,255,.04)!important;
+
+border:1px solid rgba(29,161,255,.15)!important;
+
+border-radius:12px!important;
+
+}
+
+input:focus,
+textarea:focus{
+
+border-color:var(--haze)!important;
+
+box-shadow:0 0 18px rgba(29,161,255,.25);
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(var(--haze),#006bff);
+
+border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#050b16;
+
+}/* ===================================
+   HAZE HERO
+=================================== */
+
+.haze-hero{
+    position:relative;
+    overflow:hidden;
+    padding:100px 0;
+}
+
+.haze-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,183,255,.15),transparent 40%),
+        radial-gradient(circle at 80% 60%,rgba(0,102,255,.15),transparent 45%);
+    animation:hazeFloat 8s ease-in-out infinite alternate;
+    pointer-events:none;
+}
+
+@keyframes hazeFloat{
+    from{
+        transform:translateY(-20px) scale(1);
+    }
+    to{
+        transform:translateY(20px) scale(1.05);
+    }
+}
+
+.hero-title{
+    font-size:clamp(42px,6vw,72px);
+    font-weight:900;
+    line-height:1.05;
+    color:#fff;
+    text-shadow:
+        0 0 20px rgba(0,183,255,.6),
+        0 0 40px rgba(0,183,255,.35);
+}
+
+.hero-subtitle{
+    max-width:700px;
+    margin-top:20px;
+    color:#b8dfff;
+    font-size:20px;
+    line-height:1.7;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(0,183,255,.1);
+    border:1px solid rgba(0,183,255,.25);
+    color:#7fd4ff;
+    font-weight:700;
+    margin-bottom:20px;
+    box-shadow:0 0 20px rgba(0,183,255,.2);
+}
+
+.hero-image{
+    max-width:500px;
+    width:100%;
+    filter:drop-shadow(0 0 35px rgba(0,183,255,.45));
+    animation:heroImageFloat 5s ease-in-out infinite;
+}
+
+@keyframes heroImageFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}/* ===================================
+   HAZE PRODUCT CARDS
+=================================== */
+
+.group{
+    transition:.35s;
+}
+
+.group:hover{
+    transform:translateY(-8px);
+}
+
+.group img{
+    transition:.45s;
+    border-radius:16px;
+}
+
+.group:hover img{
+    transform:scale(1.06);
+}
+
+.group h3{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:.3px;
+    color:#fff;
+}
+
+.group .badges div{
+    border-radius:999px;
+    padding:6px 12px;
+    box-shadow:0 0 15px rgba(0,183,255,.25);
+}
+
+.group .text-accent-500{
+    font-size:22px;
+    font-weight:800;
+    color:#19b8ff!important;
+}
+
+.group .border-accent-500{
+    border:1px solid #19b8ff!important;
+}
+
+.group .hover\:bg-accent-500:hover{
+    background:#19b8ff!important;
+}
+
+.group .hover\:text-t-primary:hover{
+    color:#fff!important;
+}
+
+.group .flex.items-center.justify-center.gap-2{
+    border-radius:14px;
+    padding:12px;
+    transition:.35s;
+    font-weight:700;
+    background:rgba(25,184,255,.08);
+}
+
+.group .flex.items-center.justify-center.gap-2:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 0 25px rgba(25,184,255,.35);
+
+}
+
+/* Stock */
+
+.text-green-500{
+
+color:#35ff90!important;
+
+}
+
+/* Cards */
+
+.bg-card{
+
+overflow:hidden;
+
+}
+
+/* Image Glow */
+
+.aspect-product-card-image{
+
+background:#091321;
+
+}
+
+.aspect-product-card-image img{
+
+filter:drop-shadow(0 0 18px rgba(25,184,255,.35));
+
+}
+
+/* Price */
+
+.line-through{
+
+opacity:.45;
+
+}body{
+    background:red !important;
+}

@@ -1,0 +1,164 @@
+/* ===========================
+   HAZE RESELLING THEME v1
+=========================== */
+
+:root{
+    --haze:#00a2ff;
+    --haze2:#0077ff;
+    --bg:#050b16;
+    --card:rgba(12,18,35,.75);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top,#0b2d63 0%,#07172f 30%,#050b16 100%);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Hintergrund Glow */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+    radial-gradient(circle,#00a2ff33 0%,transparent 60%);
+    filter:blur(140px);
+    animation:hazeGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes hazeGlow{
+from{
+transform:translate(-15%, -10%);
+}
+to{
+transform:translate(15%,10%);
+}
+}
+
+/* NAVBAR */
+
+nav{
+backdrop-filter:blur(18px);
+background:rgba(7,15,30,.65)!important;
+border-bottom:1px solid rgba(0,162,255,.15)!important;
+}
+
+nav a{
+transition:.25s;
+}
+
+nav a:hover{
+color:#00a2ff!important;
+text-shadow:0 0 12px #00a2ff;
+}
+
+/* LOGO */
+
+nav img{
+height:45px;
+transition:.35s;
+}
+
+nav img:hover{
+transform:scale(1.05);
+filter:drop-shadow(0 0 12px #00a2ff);
+}
+
+/* HERO */
+
+.haze-hero{
+position:relative;
+overflow:hidden;
+}
+
+.hero-title{
+font-size:68px;
+font-weight:900;
+line-height:1;
+color:white;
+text-shadow:
+0 0 15px #00a2ff,
+0 0 35px #00a2ff;
+}
+
+.hero-subtitle{
+font-size:20px;
+opacity:.85;
+max-width:700px;
+}
+
+.hero-badge{
+display:inline-block;
+padding:8px 18px;
+border-radius:999px;
+background:rgba(0,162,255,.12);
+border:1px solid rgba(0,162,255,.4);
+color:#5ec8ff;
+font-weight:700;
+margin-bottom:15px;
+box-shadow:0 0 20px rgba(0,162,255,.25);
+}
+
+/* BUTTONS */
+
+button,
+.btn,
+a[class*="bg-accent"]{
+
+background:linear-gradient(135deg,#009dff,#005eff)!important;
+
+border:none!important;
+
+border-radius:14px;
+
+transition:.3s;
+
+box-shadow:0 0 25px rgba(0,162,255,.35);
+}
+
+button:hover,
+.btn:hover,
+a[class*="bg-accent"]:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 18px #00a2ff,
+0 0 40px #00a2ff;
+
+}
+
+/* CARDS */
+
+.bg-card{
+
+background:rgba(12,18,35,.75)!important;
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(0,162,255,.15)!important;
+
+border-radius:22px!important;
+
+transition:.3s;
+
+}
+
+.bg-card:hover{
+
+transform:translateY(-6px);
+
+border-color:#00a2ff!important;
+
+box-shadow:
+
+0 0 25px rgba(0,162,255,.35);
+
+}
